@@ -16,6 +16,9 @@ moon 1.0.0 beta
 Windows 10 で動作検証をしています
 .NET Framework 6.0 対象
 
+# 配布先
+https://elbaup.com/moon
+
 # 起動方法
 
 MirroringCaptureApp.exe をクリックするとメイン画面が表示されます。
