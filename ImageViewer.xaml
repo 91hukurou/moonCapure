@@ -1,0 +1,34 @@
+﻿<Window x:Class="MirroringCaptureApp.ImageViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" Topmost="True" 
+        ResizeMode="NoResize" Background="Transparent" 
+        WindowStartupLocation="CenterScreen"
+        MouseDown="Window_MouseDown"
+        AllowsTransparency="True"
+        >
+    <Window.InputBindings>
+        <KeyBinding Key="C" Modifiers="Ctrl" Command="{Binding CopyCommand}"/>
+        <KeyBinding Key="C" Modifiers="Ctrl" Command="{Binding PasteCommand}"/>
+    </Window.InputBindings>
+
+    <Grid >
+        <ContentControl MouseDoubleClick="Image_MouseDoubleClick">
+        <Image Name="CapturedImage" Focusable="True"  >
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="閉じる" Click="CloseMenuItem_Click"/>
+                    <Separator />
+                    <MenuItem Header="保存(PNG形式)" Click="SaveImageMenuItem_Click"/>
+                    <MenuItem Header="保存(JPEG形式)" Click="SaveAsJpegMenuItem_Click"/>
+                    <MenuItem Header="コピー(Ctrl+C)" Click="CopyCommand_Click"/>
+                    <MenuItem Header="貼付(Ctrl+V)" Click="PasteMenuItem_Click"/>
+                    <Separator />
+                    <MenuItem Header="右90度回転" Click="RotateImageMenuItem_Click"/>
+                    <MenuItem Header="反転" Click="FlipImageMenuItem_Click"/>
+                </ContextMenu>
+            </Image.ContextMenu>
+        </Image>
+        </ContentControl>
+    </Grid>
+</Window>
